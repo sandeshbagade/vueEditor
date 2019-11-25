@@ -6,7 +6,7 @@
       <div v-html="content" style="min-height:300px;border:1px solid black;"></div>
     <h2>Editable (2 ways)</h2>  
      <vue-editor id="editor2" v-model="content"></vue-editor>
-  </div>
+  </div> 
 </template>
  
 <script>
@@ -19,7 +19,12 @@ export default {
  
   data() {
     return {
-      customToolbar: [["bold", "italic", "underline"], [{ list: "ordered" }, { list: "bullet" }], ["image", "code-block"]],
+      customToolbar: [[{"header":[false,1,2,3,4,5,6]}],
+                      ["bold", "italic", "underline"],
+                      [{ "list": "ordered" },{ "list": "bullet" }],
+                      ["blockquote","code-block"],
+                      ["image"]
+                     ],
       content: "<h1>Enthire</h1>"
     };
   }
